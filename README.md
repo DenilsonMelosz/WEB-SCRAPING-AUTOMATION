@@ -1,38 +1,69 @@
-# WEB-SCRAPING-E-BOOT-
+# WEB-SCRAPING-AUTOMATION
+
 Carrying out web scraping on the Magazine Luiza website with the aim of automating processes and storing data in an Excel spreadsheet.
 
 # Objetivo: 
 
-### Extrair Dados do site Magazine Luiza , relacionados a pesquisa de notebooks
+#### Extrair dados do site Magazine Luiza relacionados à pesquisa de notebooks, incluindo:
 
-# Bibliotecas utilizadas: 
+- Nome do produto
+- Quantidade de avaliações
+- URL do produto
 
-selenium: Para automatizar a interação com o navegador e extrair dados da web.
-pandas: Para manipulação e análise de dados.
-re: Para realizar operações de expressão regular.
-openpyxl: Para manipulação de arquivos Excel.
-os: Para interagir com o sistema de arquivos.
+# 🛠️ Bibliotecas Utilizadas: 
 
-### Configuração do Navegador:
+- selenium: Para automatizar a interação com o navegador e extrair dados da web.
+- pandas: Para manipulação e análise de dados.
+- re: Para realizar operações de expressão regular.
+- openpyxl: Para manipulação de arquivos Excel.
+- os: Para interagir com o sistema de arquivos.
 
+### 🧩 Configuração do Navegador
+
+```
 webdriver.FirefoxOptions(): Configura o navegador Firefox para ser executado em modo headless (sem interface gráfica).
-Função para Extrair Dados da Página
 
-### Interação com o Excel 
-Pandas: Para manipulação e análise de dados. - Converte as listas de dados melhores_data e piores_data em DataFrames do Pandas.
-Abre o arquivo Excel usando load_workbook.
-Usa pd.ExcelWriter com o motor openpyxl para criar um arquivo Excel com duas abas:
+```
+### 📊 Interação com o Excel 
 
-### Processo realizado pelo codigo:
-1º Navegar até a URL fornecida.
-2º Aguarda até que a lista de produtos esteja carregada.
-3º Extrai dados de cada produto da pagina, incluindo o nome, quantidade de avaliações e URL.
-4º Utiliza os dados coletados para fazer um comparativo das avaliações.
-5º Adiciona produtos com 100 ou mais avaliações a uma lista de melhores , já os com menos de 100 avaliações vai para a lista de piores. 
-6º Ajusta as dimensões do arquivo { Função adjust_column_widths(file_path) } e salva na pasta em formato Xlxs.
+#### - Conversão em DataFrames: Converte as listas melhores_data e piores_data em DataFrames do Pandas.
 
-Iteração sobre Páginas:
-O código itera sobre páginas numeradas de 1 a 17, coletando dados de cada página.
-Para cada página, o código chama extract_data_from_page(url) e separa os produtos em duas listas: melhores_data (com produtos bem avaliados) e piores_data (com produtos menos avaliados).
-Salvar Dados em Arquivo Excel
-Conversão em DataFrames:
+#### - Criação e Salvamento: Usa pd.ExcelWriter com o motor openpyxl para criar um arquivo Excel com duas abas:
+ 1. Melhores: Produtos com 100 ou mais avaliações.
+ 2. Piores: Produtos com menos de 100 avaliações.
+
+#### - Ajuste de Dimensões: Ajusta as dimensões das colunas para uma melhor visualização usando a função adjust_column_widths(file_path).
+
+## 🔍 Função para Extrair Dados da Página
+### Processo Realizado pelo Código
+
+1. Navegar até a URL fornecida.
+2. Aguarda até que a lista de produtos esteja carregada.
+3. Extrai dados de cada produto da pagina, incluindo o nome, quantidade de avaliações e URL.
+4. Utiliza os dados coletados para fazer um comparativo das avaliações.
+5. Adiciona produtos com 100 ou mais avaliações a uma lista de melhores , já os com menos de 100 avaliações vai para a lista de piores. 
+6. Ajusta as dimensões do arquivo { Função adjust_column_widths(file_path) } e salva na pasta em formato Xlxs.
+
+## 📚 Iteração sobre Páginas
+
+O código itera sobre páginas numeradas de 1 a 17 para coletar dados e separa os produtos nas listas melhores_data e piores_data.
+- Produtos sem avaliações são descartados. 
+
+## 💻 Instruções de Uso
+
+
+
+#### 1. Clone o meu Repositório:
+
+#### 2. Instale as Dependências: 
+
+```
+pip install selenium pandas openpyxl
+```
+#### 3. Execute o Script:
+```
+python BootCode.py
+```
+O script coletará dados, filtrará os produtos e salvará as informações em dados.xlsx. 📁
+
+
