@@ -2,6 +2,8 @@
 
 Carrying out web scraping on the Magazine Luiza website with the aim of automating processes and storing data in an Excel spreadsheet.
 
+Web Scraping is the process of using computer programs to extract information from websites
+
 # Objetivo: 
 
 #### Extrair dados do site Magazine Luiza relacionados à pesquisa de notebooks, incluindo:
