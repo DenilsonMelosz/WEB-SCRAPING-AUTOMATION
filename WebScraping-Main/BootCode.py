@@ -173,7 +173,7 @@ def send_email_via_sendgrid(to_email, subject, body, attachment_path=None):
         logging.error(f"Erro ao enviar e-mail: {str(e)}")
 
 # Exemplo de uso para enviar o e-mail
-to_email = 'denis.mello.souza76@gmail.com'
+to_email = 'teste@gmail.com'
 subject = 'Meu Relatório Notebooks'
 body = """Olá, aqui está o seu relatório dos notebooks extraídos da Magazine Luiza.
 
